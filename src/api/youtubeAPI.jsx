@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyD3mec4pBZ-56jCu2b_U9eGnnkGka9H3vk";
+const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 
 export const fetchVideos = async () => {
