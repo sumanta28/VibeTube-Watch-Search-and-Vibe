@@ -107,7 +107,7 @@ const Navbar = ({ mode, setMode }) => {
                 display: { xs: "none", sm: "block" },
               }}
             >
-              StreamNow
+              VibeTube
             </Typography>
           </Box>
 
