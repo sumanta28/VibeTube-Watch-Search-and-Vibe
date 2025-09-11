@@ -48,7 +48,7 @@ const Navbar = ({ mode, setMode }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (!searchTerm.trim()) return;
-    dispatch(searchVideos(searchTerm)); 
+    dispatch(searchVideos(searchTerm));
     navigate("/");
   };
 
@@ -70,7 +70,7 @@ const Navbar = ({ mode, setMode }) => {
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
       setSearchTerm(transcript);
-      dispatch(searchVideos(transcript)); 
+      dispatch(searchVideos(transcript));
       navigate("/");
     };
 
@@ -133,6 +133,19 @@ const Navbar = ({ mode, setMode }) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               sx={{ flexGrow: 1 }}
             />
+            {searchTerm && (
+              <IconButton
+                onClick={() => setSearchTerm("")}
+                size="large"
+                sx={{
+                  color: "red",
+                  mx: 0.5,
+                }}
+                aria-label="Clear search"
+              >
+                <CloseIcon />
+              </IconButton>
+            )}
             <IconButton type="submit" size="large">
               <SearchIcon />
             </IconButton>
