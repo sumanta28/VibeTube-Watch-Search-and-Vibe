@@ -1,5 +1,7 @@
-const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
+
+console.log(API_KEY); // Should print your API key
 
 export const fetchVideos = async () => {
   const res = await fetch(
